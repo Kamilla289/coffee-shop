@@ -16,6 +16,3 @@ export default {
     <footer-component />
   </div>
 </template>
-
-<style scoped>
-</style>
