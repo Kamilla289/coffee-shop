@@ -3,19 +3,22 @@
     <ul
       class="header d-flex justify-content-center justify-content-md-start flex-wrap"
     >
+      <!-- Логотип -->
       <li class="header__item">
-        <a href="#">
+        <router-link to="/">
           <img src="@/assets/logo/Logo.svg" alt="logo" />
-        </a>
+        </router-link>
+      </li>
+
+      <!-- Ссылки на страницы -->
+      <li class="header__item">
+        <router-link to="/our-coffee">Our coffee</router-link>
       </li>
       <li class="header__item">
-        <a href="#">Our coffee</a>
+        <router-link to="/pleasure">For your pleasure</router-link>
       </li>
       <li class="header__item">
-        <a href="#">For your pleasure</a>
-      </li>
-      <li class="header__item">
-        <a href="#">Contact us</a>
+        <router-link to="/contact">Contact us</router-link>
       </li>
     </ul>
   </header>

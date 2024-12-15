@@ -5,14 +5,16 @@ import FooterComponent from "@/components/FooterComponent.vue";
 export default {
   components: {
     HeroView,
-    FooterComponent,
+    FooterComponent, // Футер остаётся общим для всех страниц
   },
 };
 </script>
 
 <template>
   <div id="wrapper">
-    <hero-view />
+    <router-view />
+    <!-- Динамическое отображение компонентов -->
     <footer-component />
+    <!-- Футер всегда виден -->
   </div>
 </template>
