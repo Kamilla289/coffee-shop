@@ -6,26 +6,57 @@
           <ul class="footer d-flex flex-wrap">
             <li class="footer__item">
               <router-link to="/">
-                <img src="@/assets/logo/Logo_black.svg" alt="logo" />
+                <img :src="`logo/${links[0].icon}`" :alt="links[0].icon" />
               </router-link>
             </li>
             <li class="footer__item">
-              <router-link to="/our-coffee">Our coffee</router-link>
+              <router-link :to="links[1].link">{{ links[1].text }}</router-link>
             </li>
             <li class="footer__item">
-              <router-link to="/pleasure">For your pleasure</router-link>
+              <router-link :to="links[2].link">{{ links[2].text }}</router-link>
             </li>
             <li class="footer__item">
-              <router-link to="/contact">Contact us</router-link>
+              <router-link :to="links[3].link">{{ links[3].text }}</router-link>
             </li>
           </ul>
         </div>
       </div>
-      <img
-        class="beanslogo"
-        src="@/assets/logo/Beans_logo_dark.svg"
-        alt="Beans logo"
-      />
+      <img class="beanslogo" :src="`logo/${links[4].icon}`" :alt="links[4].icon" />
     </div>
   </footer>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      links: [
+        {
+          id: 0,
+          link: "/",
+          icon: "Logo_black.svg",
+        },
+        {
+          id: 1,
+          text: "Our coffee",
+          link: "/our-coffee",
+        },
+        {
+          id: 2,
+          text: "For your pleasure",
+          link: "/pleasure",
+        },
+        {
+          id: 3,
+          text: "Contact us",
+          link: "/contact",
+        },
+        {
+          id: 4,
+          icon: "Beans_logo_dark.svg",
+        },
+      ],
+    };
+  },
+};
+</script>

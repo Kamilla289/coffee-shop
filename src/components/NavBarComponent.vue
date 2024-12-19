@@ -4,7 +4,7 @@
       <!-- Логотип -->
       <li class="header__item">
         <router-link :to="links[0].link">
-          <img :src="`@/assets/logo/${links[0].icon}`" :alt="links[0].icon" />
+          <img :src="`logo/${links[0].icon}`" :alt="links[0].icon" />
         </router-link>
       </li>
 

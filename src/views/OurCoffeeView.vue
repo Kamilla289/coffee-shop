@@ -14,19 +14,11 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-4 offset-2">
-            <img
-              class="shop__girl"
-              src="@/assets/img/coffee_girl.jpg"
-              alt="girl"
-            />
+            <img class="shop__girl" src="@/assets/img/coffee_girl.jpg" alt="girl" />
           </div>
           <div class="col-lg-4">
             <div class="title">About our beans</div>
-            <img
-              class="beanslogo"
-              src="@/assets/logo/Beans_logo_dark.svg"
-              alt="Beans logo"
-            />
+            <img class="beanslogo" src="@/assets/logo/Beans_logo_dark.svg" alt="Beans logo" />
             <div class="shop__text">
               Extremity sweetness difficult behaviour he of. On disposal of as
               landlord horrible.
@@ -47,12 +39,7 @@
           <div class="col-lg-4 offset-2">
             <form action="#" class="shop__search">
               <label class="shop__search-label" for="filter">Looking for</label>
-              <input
-                id="filter"
-                type="text"
-                placeholder="start typing here..."
-                class="shop__search-input"
-              />
+              <input id="filter" type="text" placeholder="start typing here..." class="shop__search-input" />
             </form>
           </div>
           <div class="col-lg-4">
@@ -91,6 +78,54 @@ export default {
   components: {
     NavBarComponent,
     CardCoffee,
+  },
+  data() {
+    return {
+      card: [
+        {
+          id: 0,
+          image: "coffee-3.jpg",
+          title: "Solimo Coffee Beans 2kg",
+          country: "Brazil",
+          price: "10.73$",
+        },
+        {
+          id: 1,
+          image: "coffee-3.jpg",
+          title: "Presto Coffee Beans 1kg",
+          country: "Brazil",
+          price: "15.99$",
+        },
+        {
+          id: 2,
+          image: "coffee-3.jpg",
+          title: "AROMISTICO Coffee 1kg",
+          country: "Brazil",
+          price: "6.99$",
+        },
+        {
+          id: 3,
+          image: "coffee-3.jpg",
+          title: "Solimo Coffee Beans 2kg",
+          country: "Brazil",
+          price: "10.73$",
+        },
+        {
+          id: 4,
+          image: "coffee-3.jpg",
+          title: "Solimo Coffee Beans 2kg",
+          country: "Brazil",
+          price: "10.73$",
+        },
+        {
+          id: 5,
+          image: "coffee-3.jpg",
+          title: "Solimo Coffee Beans 2kg",
+          country: "Brazil",
+          price: "10.73$",
+        },
+      ],
+    };
   },
 };
 </script>

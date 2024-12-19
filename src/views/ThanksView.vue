@@ -15,11 +15,7 @@
         <div class="row">
           <div class="col col-12 col-lg-6 offset-0 offset-lg-3">
             <div class="title mt-5">Tell us about your tastes</div>
-            <img
-              class="beanslogo mt-5"
-              src="@/assets/logo/Beans_logo_dark.svg"
-              alt="Beans logo"
-            />
+            <img class="beanslogo mt-5" src="@/assets/logo/Beans_logo_dark.svg" alt="Beans logo" />
           </div>
         </div>
 
