@@ -10,7 +10,7 @@
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
             <h1 class="title-big">Everything You Love About Coffee</h1>
-            <img class="beanslogo" src="@/assets/logo/Beans_logo.svg" alt="Beans logo" />
+            <img class="beanslogo" :src="`logo/Beans_logo.svg`" alt="Beans logo" />
             <div class="preview__subtitle">
               We makes every day full of energy and taste
             </div>
@@ -26,7 +26,7 @@
         <div class="row">
           <div class="col-lg-6 offset-lg-3">
             <div class="title">About Us</div>
-            <img class="beanslogo" src="@/assets/logo/Beans_logo_dark.svg" alt="Beans logo" />
+            <img class="beanslogo" :src="`logo/Beans_logo_dark.svg`" alt="Beans logo" />
             <div class="about__text">
               Extremity sweetness difficult behaviour he of. On disposal of as
               landlord horrible. Afraid at highly months do things on at.
