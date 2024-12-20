@@ -7,7 +7,7 @@
             <nav-bar-component />
           </div>
         </div>
-        <h1 class="title-big">Contact us</h1>
+        <title-header classItem="title-big" :title="title[0].text" />
       </div>
     </div>
     <section class="contacts">
@@ -15,7 +15,7 @@
         <div class="row">
           <div class="col col-12 col-lg-6 offset-0 offset-lg-3">
             <div class="title mt-5">Tell us about your tastes</div>
-            <img class="beanslogo mt-5" :src="`logo/Beans_logo_dark.svg`" alt="Beans logo" />
+            <img class="beanslogo mt-5" src="/logo/Beans_logo_dark.svg" alt="Beans logo" />
 
             <form action="#" class="mt-5">
               <div class="form-group row">
@@ -79,10 +79,22 @@
 
 <script>
 import NavBarComponent from "@/components/NavBarComponent.vue";
+import TitleHeader from "@/components/TitleHeader.vue";
 
 export default {
   components: {
     NavBarComponent,
+    TitleHeader
+  },
+  data() {
+    return {
+      title: [
+        {
+          id: 0,
+          text: "Contact us",
+        },
+      ],
+    };
   },
 };
 </script>

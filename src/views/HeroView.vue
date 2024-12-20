@@ -9,8 +9,8 @@
         </div>
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
-            <h1 class="title-big">Everything You Love About Coffee</h1>
-            <img class="beanslogo" :src="`logo/Beans_logo.svg`" alt="Beans logo" />
+            <title-header classItem="title-big" :title="title[0].text" />
+            <img class="beanslogo" src="/logo/Beans_logo.svg" alt="Beans logo" />
             <div class="preview__subtitle">
               We makes every day full of energy and taste
             </div>
@@ -26,7 +26,7 @@
         <div class="row">
           <div class="col-lg-6 offset-lg-3">
             <div class="title">About Us</div>
-            <img class="beanslogo" :src="`logo/Beans_logo_dark.svg`" alt="Beans logo" />
+            <img class="beanslogo" src="/logo/Beans_logo_dark.svg" alt="Beans logo" />
             <div class="about__text">
               Extremity sweetness difficult behaviour he of. On disposal of as
               landlord horrible. Afraid at highly months do things on at.
@@ -52,9 +52,12 @@
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
             <div class="best__wrapper">
-              <card-coffee />
-              <card-coffee />
-              <card-coffee />
+              <card-coffee classItem="best__item" :image="card[0].image" :title="card[0].title"
+                :price="card[0].price" />
+              <card-coffee classItem="best__item" :image="card[1].image" :title="card[1].title"
+                :price="card[1].price" />
+              <card-coffee classItem="best__item" :image="card[2].image" :title="card[2].title"
+                :price="card[2].price" />
             </div>
           </div>
         </div>
@@ -66,11 +69,13 @@
 <script>
 import NavBarComponent from "@/components/NavBarComponent.vue";
 import CardCoffee from "@/components/CardCoffee.vue";
+import TitleHeader from "@/components/TitleHeader.vue";
 
 export default {
   components: {
     NavBarComponent,
     CardCoffee,
+    TitleHeader
   },
   data() {
     return {
@@ -79,19 +84,25 @@ export default {
           id: 0,
           image: "coffee-1.jpg",
           title: "Solimo Coffee Beans 2kg",
-          price: "10.73$",
+          price: "10.73",
         },
         {
           id: 1,
           image: "coffee-2.jpg",
           title: "Presto Coffee Beans 1kg",
-          price: "15.99$",
+          price: "15.99",
         },
         {
           id: 2,
           image: "coffee-3.jpg",
           title: "AROMISTICO Coffee 1kg",
-          price: "6.99$",
+          price: "6.99",
+        },
+      ],
+      title: [
+        {
+          id: 0,
+          text: "Everything You Love About Coffee",
         },
       ],
     };

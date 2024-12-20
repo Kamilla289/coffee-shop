@@ -7,7 +7,7 @@
             <nav-bar-component />
           </div>
         </div>
-        <h1 class="title-big">Thank you</h1>
+        <title-header classItem="title-big" :title="title[0].text" />
       </div>
     </div>
     <section class="contacts">
@@ -24,7 +24,7 @@
             <div class="title big__text mt-5">
               <p>Thank you so much</p>
               <p>We contact you as soon as posible</p>
-              <img :src="`img/thanks.png`" alt="thanks-icon" />
+              <img src="/img/thanks.png" alt="thanks-icon" />
             </div>
           </div>
         </div>
@@ -35,10 +35,22 @@
 
 <script>
 import NavBarComponent from "@/components/NavBarComponent.vue";
+import TitleHeader from "@/components/TitleHeader.vue";
 
 export default {
   components: {
     NavBarComponent,
+    TitleHeader
+  },
+  data() {
+    return {
+      title: [
+        {
+          id: 0,
+          text: "Thank you",
+        },
+      ],
+    };
   },
 };
 </script>
