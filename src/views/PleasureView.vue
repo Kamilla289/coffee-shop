@@ -14,11 +14,11 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-4 offset-2">
-            <img class="shop__girl" :src="`img/coffee_goods.jpg`" alt="girl" />
+            <img class="shop__girl" src="`img/coffee_goods.jpg`" alt="girl" />
           </div>
           <div class="col-lg-4">
             <div class="title">About our beans</div>
-            <img class="beanslogo" :src="`logo/Beans_logo_dark.svg`" alt="Beans logo" />
+            <img class="beanslogo" src="`logo/Beans_logo_dark.svg`" alt="Beans logo" />
             <div class="shop__text">
               Extremity sweetness difficult behaviour he of. On disposal of as
               landlord horrible.
