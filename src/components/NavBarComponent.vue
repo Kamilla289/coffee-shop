@@ -1,23 +1,19 @@
 <template>
   <header>
     <ul class="header d-flex justify-content-center justify-content-md-start flex-wrap">
-      <!-- Логотип -->
-      <li class="header__item">
-        <router-link :to="links[0].link">
-          <img :src="`logo/${links[0].icon}`" :alt="links[0].icon" />
-        </router-link>
-      </li>
+      <page-link classItem="header__item" :link="links.header.link">
+        <img :src="`logo/${links.header.icon}`" :alt="links.header.icon" />
+      </page-link>
 
-      <!-- Ссылки на страницы -->
-      <page-link class="header__item" :link="links[1].link" :text="links[1].text" />
-      <page-link class="header__item" :link="links[2].link" :text="links[2].text" />
-      <page-link class="header__item" :link="links[3].link" :text="links[3].text" />
+      <page-link v-for="link in links.other" :key="link.id" classItem="header__item" :link="link.link"
+        :text="link.text" />
     </ul>
   </header>
 </template>
 
 <script>
 import PageLink from "@/components/PageLink.vue";
+import { v4 as uuidv4 } from 'uuid';
 
 export default {
   components: {
@@ -25,28 +21,30 @@ export default {
   },
   data() {
     return {
-      links: [
-        {
-          id: 0,
+      links: {
+        header: {
+          id: uuidv4(),
           link: "/",
           icon: "Logo.svg",
         },
-        {
-          id: 1,
-          text: "Our coffee",
-          link: "/our-coffee",
-        },
-        {
-          id: 2,
-          text: "For your pleasure",
-          link: "/pleasure",
-        },
-        {
-          id: 3,
-          text: "Contact us",
-          link: "/contact",
-        },
-      ],
+        other: [
+          {
+            id: uuidv4(),
+            text: "Our coffee",
+            link: "/our-coffee",
+          },
+          {
+            id: uuidv4(),
+            text: "For your pleasure",
+            link: "/pleasure",
+          },
+          {
+            id: uuidv4(),
+            text: "Contact us",
+            link: "/contact",
+          },
+        ],
+      }
     };
   },
 };

@@ -52,12 +52,8 @@
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
             <div class="best__wrapper">
-              <card-coffee classItem="best__item" :image="card[0].image" :title="card[0].title"
-                :price="card[0].price" />
-              <card-coffee classItem="best__item" :image="card[1].image" :title="card[1].title"
-                :price="card[1].price" />
-              <card-coffee classItem="best__item" :image="card[2].image" :title="card[2].title"
-                :price="card[2].price" />
+              <card-coffee v-for="card in cards" :key="card.id" classItem="best__item" :image="card.image"
+                :title="card.title" :price="card.price" />
             </div>
           </div>
         </div>
@@ -79,24 +75,24 @@ export default {
   },
   data() {
     return {
-      card: [
+      cards: [
         {
           id: 0,
           image: "coffee-1.jpg",
           title: "Solimo Coffee Beans 2kg",
-          price: "10.73",
+          price: 10.73,
         },
         {
           id: 1,
           image: "coffee-2.jpg",
           title: "Presto Coffee Beans 1kg",
-          price: "15.99",
+          price: 15.99,
         },
         {
           id: 2,
           image: "coffee-3.jpg",
           title: "AROMISTICO Coffee 1kg",
-          price: "6.99",
+          price: 6.99,
         },
       ],
       title: [

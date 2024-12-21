@@ -56,18 +56,8 @@
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
             <div class="shop__wrapper">
-              <card-coffee classItem="shop__item" :image="coffee[0].image" :title="coffee[0].title"
-                :country="coffee[0].country" :price="coffee[0].price" />
-              <card-coffee classItem="shop__item" :image="coffee[1].image" :title="coffee[1].title"
-                :country="coffee[1].country" :price="coffee[1].price" />
-              <card-coffee classItem="shop__item" :image="coffee[2].image" :title="coffee[2].title"
-                :country="coffee[2].country" :price="coffee[2].price" />
-              <card-coffee classItem="shop__item" :image="coffee[3].image" :title="coffee[3].title"
-                :country="coffee[3].country" :price="coffee[3].price" />
-              <card-coffee classItem="shop__item" :image="coffee[4].image" :title="coffee[4].title"
-                :country="coffee[4].country" :price="coffee[4].price" />
-              <card-coffee classItem="shop__item" :image="coffee[5].image" :title="coffee[5].title"
-                :country="coffee[5].country" :price="coffee[5].price" />
+              <card-coffee v-for="card in coffee" :key="card.id" classItem="shop__item" :image="card.image"
+                :title="card.title" :price="card.price" :country="card.country" />
             </div>
           </div>
         </div>
@@ -95,42 +85,42 @@ export default {
           image: "coffee-3.jpg",
           title: "Solimo Coffee Beans 2kg",
           country: "Brazil",
-          price: "10.73",
+          price: 10.73,
         },
         {
           id: 1,
           image: "coffee-3.jpg",
           title: "Presto Coffee Beans 1kg",
           country: "Brazil",
-          price: "15.99",
+          price: 15.99,
         },
         {
           id: 2,
           image: "coffee-3.jpg",
           title: "AROMISTICO Coffee 1kg",
           country: "Brazil",
-          price: "6.99",
+          price: 6.99,
         },
         {
           id: 3,
           image: "coffee-3.jpg",
           title: "Solimo Coffee Beans 2kg",
           country: "Brazil",
-          price: "10.73",
+          price: 10.73,
         },
         {
           id: 4,
           image: "coffee-3.jpg",
           title: "Solimo Coffee Beans 2kg",
           country: "Brazil",
-          price: "10.73",
+          price: 10.73,
         },
         {
           id: 5,
           image: "coffee-3.jpg",
           title: "Solimo Coffee Beans 2kg",
           country: "Brazil",
-          price: "10.73",
+          price: 10.73,
         },
       ],
       title: [

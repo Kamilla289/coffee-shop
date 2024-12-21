@@ -4,24 +4,25 @@
       <div class="row">
         <div class="col-lg-6 offset-lg-3">
           <ul class="footer d-flex flex-wrap">
-            <li class="footer__item">
-              <router-link to="/">
-                <img :src="`logo/${links[0].icon}`" :alt="links[0].icon" />
-              </router-link>
-            </li>
-            <page-link class="footer__item" :link="links[1].link" :text="links[1].text" />
-            <page-link class="footer__item" :link="links[2].link" :text="links[2].text" />
-            <page-link class="footer__item" :link="links[3].link" :text="links[3].text" />
+
+            <page-link classItem="footer__item" :link="links.header.link">
+              <img :src="`logo/${links.header.icon}`" :alt="links.header.icon" />
+            </page-link>
+
+            <page-link v-for="link in links.other" :key="link.id" classItem="footer__item" :link="link.link"
+              :text="link.text" />
+
           </ul>
         </div>
       </div>
-      <img class="beanslogo" :src="`logo/${links[4].icon}`" :alt="links[4].icon" />
+      <img class="beanslogo" src="/logo/Beans_logo_dark.svg" alt="Beans logo" />
     </div>
   </footer>
 </template>
 
 <script>
 import PageLink from "@/components/PageLink.vue";
+import { v4 as uuidv4 } from 'uuid';
 
 export default {
   components: {
@@ -29,32 +30,30 @@ export default {
   },
   data() {
     return {
-      links: [
-        {
-          id: 0,
+      links: {
+        header: {
+          id: uuidv4(),
           link: "/",
           icon: "Logo_black.svg",
         },
-        {
-          id: 1,
-          text: "Our coffee",
-          link: "/our-coffee",
-        },
-        {
-          id: 2,
-          text: "For your pleasure",
-          link: "/pleasure",
-        },
-        {
-          id: 3,
-          text: "Contact us",
-          link: "/contact",
-        },
-        {
-          id: 4,
-          icon: "Beans_logo_dark.svg",
-        },
-      ],
+        other: [
+          {
+            id: uuidv4(),
+            text: "Our coffee",
+            link: "/our-coffee",
+          },
+          {
+            id: uuidv4(),
+            text: "For your pleasure",
+            link: "/pleasure",
+          },
+          {
+            id: uuidv4(),
+            text: "Contact us",
+            link: "/contact",
+          }
+        ],
+      }
     };
   },
 };
