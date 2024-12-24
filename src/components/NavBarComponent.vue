@@ -13,7 +13,7 @@
 
 <script>
 import PageLink from "@/components/PageLink.vue";
-import { v4 as uuidv4 } from 'uuid';
+import LinkFactory from "@/LinkFactory.js";
 
 export default {
   components: {
@@ -22,27 +22,24 @@ export default {
   data() {
     return {
       links: {
-        header: {
-          id: uuidv4(),
-          link: "/",
-          icon: "Logo.svg",
-        },
+        header:
+          LinkFactory({
+            link: "/",
+            icon: "Logo.svg"
+          }),
         other: [
-          {
-            id: uuidv4(),
+          LinkFactory({
             text: "Our coffee",
             link: "/our-coffee",
-          },
-          {
-            id: uuidv4(),
+          }),
+          LinkFactory({
             text: "For your pleasure",
             link: "/pleasure",
-          },
-          {
-            id: uuidv4(),
+          }),
+          LinkFactory({
             text: "Contact us",
             link: "/contact",
-          },
+          }),
         ],
       }
     };
