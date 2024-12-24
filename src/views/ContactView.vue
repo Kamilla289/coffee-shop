@@ -17,7 +17,7 @@
             <div class="title mt-5">Tell us about your tastes</div>
             <img class="beanslogo mt-5" src="/logo/Beans_logo_dark.svg" alt="Beans logo" />
 
-            <form action="#" class="mt-5">
+            <form action="#" class="mt-5" @submit.prevent="submitForm">
               <div class="form-group row">
                 <div class="col col-12 col-sm-3 d-flex align-items-center">
                   <label for="name-input" class="mb-0">
@@ -88,6 +88,12 @@ export default {
   },
   data() {
     return {
+      formData: {
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      },
       title: [
         {
           id: 0,
@@ -96,5 +102,10 @@ export default {
       ],
     };
   },
+  methods: {
+    submitForm() {
+      console.log(this.formData);
+    }
+  }
 };
 </script>
