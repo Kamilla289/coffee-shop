@@ -66,6 +66,7 @@
 import NavBarComponent from "@/components/NavBarComponent.vue";
 import CardCoffee from "@/components/CardCoffee.vue";
 import TitleHeader from "@/components/TitleHeader.vue";
+import coffeeFactory from "@/CoffeeFactory.js";
 
 export default {
   components: {
@@ -75,26 +76,7 @@ export default {
   },
   data() {
     return {
-      cards: [
-        {
-          id: 0,
-          image: "coffee-1.jpg",
-          title: "Solimo Coffee Beans 2kg",
-          price: 10.73,
-        },
-        {
-          id: 1,
-          image: "coffee-2.jpg",
-          title: "Presto Coffee Beans 1kg",
-          price: 15.99,
-        },
-        {
-          id: 2,
-          image: "coffee-3.jpg",
-          title: "AROMISTICO Coffee 1kg",
-          price: 6.99,
-        },
-      ],
+      cards: [],
       title: [
         {
           id: 0,
@@ -103,5 +85,29 @@ export default {
       ],
     };
   },
+  created() {
+    this.cards = this.createCards();
+  },
+  methods: {
+    createCards() {
+      return [
+        coffeeFactory({
+          title: "Solimo Coffee Beans 2kg",
+          price: 10.73,
+          image: "coffee-1.jpg",
+        }),
+        coffeeFactory({
+          title: "Presto Coffee Beans 1kg",
+          price: 15.99,
+          image: "coffee-2.jpg",
+        }),
+        coffeeFactory({
+          title: "AROMISTICO Coffee 1kg",
+          price: 6.99,
+          image: "coffee-3.jpg",
+        })
+      ];
+    }
+  }
 };
 </script>
