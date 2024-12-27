@@ -52,8 +52,7 @@
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
             <div class="best__wrapper">
-              <card-coffee v-for="card in cardStore.cards" :key="card.id" classItem="best__item" :image="card.image"
-                :title="card.title" :price="card.price" />
+              <card-coffee v-for="card in cardStore.cards" :key="card.id" classItem="best__item" :card="card" />
             </div>
           </div>
         </div>

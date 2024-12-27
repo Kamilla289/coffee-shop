@@ -6,6 +6,8 @@ const routes = [
   { path: '/pleasure', name: 'Pleasure', component: () => import('@/views/PleasureView.vue') },
   { path: '/contact', name: 'Contact', component: () => import('@/views/ContactView.vue') },
   { path: '/thanks', name: 'Thanks', component: () => import('@/views/ThanksView.vue') },
+  { path: '/our-coffee/:id', name: 'CoffeeSection', component: () => import('@/views/GoodsItemView.vue') },
+  { path: '/pleasure/:id', name: 'Goods', component: () => import('@/views/GoodsItemView.vue') },
 ];
 
 const router = createRouter({

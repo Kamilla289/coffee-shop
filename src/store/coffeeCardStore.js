@@ -24,26 +24,32 @@ const cardStore = {
     ],
     coffee: [
       coffeeFactory({
+        id: 0,
         title: "Solimo Coffee Beans 2kg",
         price: 10.73,
       }),
       coffeeFactory({
+        id: 1,
         title: "Presto Coffee Beans 1kg",
         price: 15.99,
       }),
       coffeeFactory({
+        id: 2,
         title: "AROMISTICO Coffee 1kg",
         price: 6.99,
       }),
       coffeeFactory({
+        id: 3,
         title: "Solimo Coffee Beans 2kg",
         price: 10.73,
       }),
       coffeeFactory({
+        id: 4,
         title: "Solimo Coffee Beans 2kg",
         price: 10.73,
       }),
       coffeeFactory({
+        id: 5,
         title: "Solimo Coffee Beans 2kg",
         price: 10.73,
       })
@@ -102,6 +108,21 @@ const cardStore = {
     },
     getCoffeePleasure(state) {
       return { goods: state.goods };
+    },
+    getProductById(state) {
+      return (id) => {
+        return state.cards.find((card) => card.id === +id);
+      }
+    },
+    getCoffeeById(state) {
+      return (id) => {
+        return state.coffee.find((card) => card.id === +id);
+      }
+    },
+    getGoodsById(state) {
+      return (id) => {
+        return state.goods.find((card) => card.id === +id);
+      }
     },
   }
 }

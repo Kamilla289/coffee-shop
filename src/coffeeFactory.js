@@ -1,11 +1,10 @@
-function coffeeFactory({ title, price, image }) {
-  let id = 0;
+function coffeeFactory({ id, title, price, image }) {
   return {
-    id: id++,
+    id,
     image: "coffee-3.jpg",
-    title: "Solimo Coffee Beans 2kg",
+    title,
     country: "Brazil",
-    price: 10.73,
+    price,
   };
 }
 

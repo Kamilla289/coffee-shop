@@ -40,8 +40,8 @@
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
             <div class="shop__wrapper">
-              <card-coffee v-for="card in cardStore.goods" :key="card.id" classItem="shop__item" :image="card.image"
-                :title="card.title" :price="card.price" :country="card.country" />
+              <card-coffee v-for="card in cardStore.goods" :key="card.id" classItem="shop__item" :card="card"
+                @onNavigate="navigate" />
             </div>
           </div>
         </div>
@@ -54,6 +54,7 @@
 import NavBarComponent from "@/components/NavBarComponent.vue";
 import CardCoffee from "@/components/CardCoffee.vue";
 import TitleHeader from "@/components/TitleHeader.vue";
+import { navigate } from "../mixins/navigate"
 
 export default {
   components: {
@@ -68,6 +69,7 @@ export default {
   },
   data() {
     return {
+      name: 'CoffeeSection',
       title: [
         {
           id: 0,
@@ -76,5 +78,6 @@ export default {
       ],
     };
   },
+  mixins: [navigate],
 };
 </script>
