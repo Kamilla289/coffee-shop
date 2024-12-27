@@ -56,7 +56,7 @@
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
             <div class="shop__wrapper">
-              <card-coffee v-for="card in coffee" :key="card.id" classItem="shop__item" :image="card.image"
+              <card-coffee v-for="card in cardStore.coffee" :key="card.id" classItem="shop__item" :image="card.image"
                 :title="card.title" :price="card.price" :country="card.country" />
             </div>
           </div>
@@ -70,7 +70,6 @@
 import NavBarComponent from "@/components/NavBarComponent.vue";
 import CardCoffee from "@/components/CardCoffee.vue";
 import TitleHeader from "@/components/TitleHeader.vue";
-import coffeeFactory from "@/CoffeeFactory.js";
 
 export default {
   components: {
@@ -78,34 +77,13 @@ export default {
     CardCoffee,
     TitleHeader
   },
+  computed: {
+    cardStore() {
+      return this.$store.getters["getCoffeeOur"]
+    },
+  },
   data() {
     return {
-      coffee: [
-        coffeeFactory({
-          title: "Solimo Coffee Beans 2kg",
-          price: 10.73,
-        }),
-        coffeeFactory({
-          title: "Presto Coffee Beans 1kg",
-          price: 15.99,
-        }),
-        coffeeFactory({
-          title: "AROMISTICO Coffee 1kg",
-          price: 6.99,
-        }),
-        coffeeFactory({
-          title: "Solimo Coffee Beans 2kg",
-          price: 10.73,
-        }),
-        coffeeFactory({
-          title: "Solimo Coffee Beans 2kg",
-          price: 10.73,
-        }),
-        coffeeFactory({
-          title: "Solimo Coffee Beans 2kg",
-          price: 10.73,
-        })
-      ],
       title: [
         {
           id: 0,

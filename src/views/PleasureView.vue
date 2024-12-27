@@ -40,7 +40,7 @@
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
             <div class="shop__wrapper">
-              <card-coffee v-for="card in goods" :key="card.id" classItem="shop__item" :image="card.image"
+              <card-coffee v-for="card in cardStore.goods" :key="card.id" classItem="shop__item" :image="card.image"
                 :title="card.title" :price="card.price" :country="card.country" />
             </div>
           </div>
@@ -61,52 +61,13 @@ export default {
     CardCoffee,
     TitleHeader
   },
+  computed: {
+    cardStore() {
+      return this.$store.getters["getCoffeePleasure"]
+    },
+  },
   data() {
     return {
-      goods: [
-        {
-          id: 0,
-          image: "good-1.jpg",
-          title: "Solimo Coffee Beans 2kg",
-          country: "Brazil",
-          price: 10.73,
-        },
-        {
-          id: 1,
-          image: "good-1.jpg",
-          title: "Presto Coffee Beans 1kg",
-          country: "Brazil",
-          price: 15.99,
-        },
-        {
-          id: 2,
-          image: "good-1.jpg",
-          title: "AROMISTICO Coffee 1kg",
-          country: "Brazil",
-          price: 6.99,
-        },
-        {
-          id: 3,
-          image: "good-1.jpg",
-          title: "Solimo Coffee Beans 2kg",
-          country: "Brazil",
-          price: 10.73,
-        },
-        {
-          id: 4,
-          image: "good-1.jpg",
-          title: "Solimo Coffee Beans 2kg",
-          country: "Brazil",
-          price: 10.73,
-        },
-        {
-          id: 5,
-          image: "good-1.jpg",
-          title: "Solimo Coffee Beans 2kg",
-          country: "Brazil",
-          price: 10.73,
-        },
-      ],
       title: [
         {
           id: 0,

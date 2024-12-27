@@ -26,7 +26,7 @@
                   </label>
                 </div>
                 <div class="col col-12 col-sm-9">
-                  <input type="text" class="form-control" id="name-input" />
+                  <input v-model="formData.name" type="text" class="form-control" id="name-input" />
                 </div>
               </div>
 
@@ -38,7 +38,7 @@
                   </label>
                 </div>
                 <div class="col col-12 col-sm-9">
-                  <input type="email" class="form-control" id="email-input" />
+                  <input v-model="formData.email" type="email" class="form-control" id="email-input" />
                 </div>
               </div>
 
@@ -47,7 +47,7 @@
                   <label for="phone-input" class="mb-0"> Phone </label>
                 </div>
                 <div class="col col-12 col-sm-9">
-                  <input type="tel" class="form-control" id="phone-input" />
+                  <input v-model="formData.phone" type="tel" class="form-control" id="phone-input" />
                 </div>
               </div>
 
@@ -59,7 +59,7 @@
                   </label>
                 </div>
                 <div class="col col-12">
-                  <textarea class="form-control" name="message" id="message" rows="5"
+                  <textarea v-model="formData.message" class="form-control" name="message" id="message" rows="5"
                     placeholder="Leave your comments here"></textarea>
                 </div>
               </div>

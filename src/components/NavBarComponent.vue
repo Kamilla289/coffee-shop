@@ -13,36 +13,15 @@
 
 <script>
 import PageLink from "@/components/PageLink.vue";
-import LinkFactory from "@/LinkFactory.js";
 
 export default {
   components: {
     PageLink,
   },
-  data() {
-    return {
-      links: {
-        header:
-          LinkFactory({
-            link: "/",
-            icon: "Logo.svg"
-          }),
-        other: [
-          LinkFactory({
-            text: "Our coffee",
-            link: "/our-coffee",
-          }),
-          LinkFactory({
-            text: "For your pleasure",
-            link: "/pleasure",
-          }),
-          LinkFactory({
-            text: "Contact us",
-            link: "/contact",
-          }),
-        ],
-      }
-    };
-  },
+  computed: {
+    links() {
+      return this.$store.getters["getHeaderLinks"]
+    }
+  }
 };
 </script>
