@@ -109,11 +109,6 @@ const cardStore = {
     getCoffeePleasure(state) {
       return { goods: state.goods };
     },
-    getProductById(state) {
-      return (id) => {
-        return state.cards.find((card) => card.id === +id);
-      }
-    },
     getCoffeeById(state) {
       return (id) => {
         return state.coffee.find((card) => card.id === +id);

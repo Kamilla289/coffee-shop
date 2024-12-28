@@ -58,7 +58,6 @@
             <div class="shop__wrapper">
               <card-coffee v-for="card in cardStore.coffee" :key="card.id" classItem="shop__item" :card="card"
                 @onNavigate="navigate" />
-              <!-- /our-coffee/item -->
             </div>
           </div>
         </div>
