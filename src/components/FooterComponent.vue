@@ -6,7 +6,7 @@
           <ul class="footer d-flex flex-wrap">
 
             <page-link classItem="footer__item" :link="links.footer.link">
-              <img :src="`logo/${links.footer.icon}`" :alt="links.footer.icon" />
+              <img :src="`/logo/${links.footer.icon}`" :alt="links.footer.icon" />
             </page-link>
 
             <page-link v-for="link in links.other" :key="link.id" classItem="footer__item" :link="link.link"
