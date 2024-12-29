@@ -85,7 +85,7 @@ export default {
   },
   data() {
     return {
-      name: 'Goods',
+      name: 'CoffeeSection',
       title: [
         {
           id: 0,

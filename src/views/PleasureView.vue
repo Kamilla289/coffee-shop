@@ -69,7 +69,7 @@ export default {
   },
   data() {
     return {
-      name: 'CoffeeSection',
+      name: 'Goods',
       title: [
         {
           id: 0,
