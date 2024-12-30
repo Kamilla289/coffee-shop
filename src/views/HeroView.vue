@@ -80,6 +80,7 @@ export default {
   },
   data() {
     return {
+      name: 'coffee',
       title: [
         {
           id: 0,
@@ -92,6 +93,13 @@ export default {
     smoothScroll() {
       scrollIntoView(this.$refs.ourBest, { behavior: "smooth", block: "start" });
     },
-  }
+  },
+  mounted() {
+    fetch('http://localhost:3000/coffee')
+      .then(res => res.json())
+      .then(data => {
+        this.$store.dispatch("setCardData", data);
+      })
+  },
 };
 </script>

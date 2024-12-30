@@ -124,13 +124,28 @@ export default {
     async submitForm() {
       const isFormCorrect = await this.v$.$validate();
       if (!isFormCorrect) return;
-      console.log({
+      const message = {
         name: this.name,
         email: this.email,
         phone: this.phone,
         message: this.message,
         agree: this.agree,
+      }
+      fetch('http://localhost:3000/contacts', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(message),
       })
+        .then(data => {
+          this.name = "";
+          this.email = "";
+          this.phone = "";
+          this.message = "";
+          this.agree = false;
+          this.v$.$reset();
+        })
     }
   },
   validations() {

@@ -2,103 +2,50 @@ import coffeeFactory from "@/CoffeeFactory.js";
 
 const cardStore = {
   state: {
-    cards: [
-      {
-        id: 0,
-        image: "coffee-1.jpg",
-        title: "Solimo Coffee Beans 2kg",
-        price: 10.73,
-      },
-      {
-        id: 1,
-        image: "coffee-2.jpg",
-        title: "Presto Coffee Beans 1kg",
-        price: 15.99,
-      },
-      {
-        id: 2,
-        image: "coffee-3.jpg",
-        title: "AROMISTICO Coffee 1kg",
-        price: 6.99,
-      },
-    ],
-    coffee: [
-      coffeeFactory({
-        id: 0,
-        title: "Solimo Coffee Beans 2kg",
-        price: 10.73,
-      }),
-      coffeeFactory({
-        id: 1,
-        title: "Presto Coffee Beans 1kg",
-        price: 15.99,
-      }),
-      coffeeFactory({
-        id: 2,
-        title: "AROMISTICO Coffee 1kg",
-        price: 6.99,
-      }),
-      coffeeFactory({
-        id: 3,
-        title: "Solimo Coffee Beans 2kg",
-        price: 10.73,
-      }),
-      coffeeFactory({
-        id: 4,
-        title: "Solimo Coffee Beans 2kg",
-        price: 10.73,
-      }),
-      coffeeFactory({
-        id: 5,
-        title: "Solimo Coffee Beans 2kg",
-        price: 10.73,
-      })
-    ],
-    goods: [
-      {
-        id: 0,
-        image: "good-1.jpg",
-        title: "Solimo Coffee Beans 2kg",
-        country: "Brazil",
-        price: 10.73,
-      },
-      {
-        id: 1,
-        image: "good-1.jpg",
-        title: "Presto Coffee Beans 1kg",
-        country: "Brazil",
-        price: 15.99,
-      },
-      {
-        id: 2,
-        image: "good-1.jpg",
-        title: "AROMISTICO Coffee 1kg",
-        country: "Brazil",
-        price: 6.99,
-      },
-      {
-        id: 3,
-        image: "good-1.jpg",
-        title: "Solimo Coffee Beans 2kg",
-        country: "Brazil",
-        price: 10.73,
-      },
-      {
-        id: 4,
-        image: "good-1.jpg",
-        title: "Solimo Coffee Beans 2kg",
-        country: "Brazil",
-        price: 10.73,
-      },
-      {
-        id: 5,
-        image: "good-1.jpg",
-        title: "Solimo Coffee Beans 2kg",
-        country: "Brazil",
-        price: 10.73,
-      },
-    ],
+    product: null,
+    isLoading: false,
   },
+
+  actions: {
+    setCoffeeData({ commit }, data) {
+      commit('setCoffeeData', data);
+    },
+    setCardData({ commit }, data) {
+      commit('setCardData', data);
+    },
+    setGoodsData({ commit }, data) {
+      commit('setGoodsData', data);
+    },
+    fetchProductById({ commit }, productId) {
+      return fetch(`http://localhost:3000/CoffeeSection/${productId}`)
+        .then(res => res.json())
+        .then(data => {
+          commit('setSelectedProduct', data);
+        });
+    },
+    setLoading({ commit }, loading) {
+      commit('setLoading', loading);
+    },
+  },
+
+  mutations: {
+    setCoffeeData(state, data) {
+      state.coffee = data;
+    },
+    setCardData(state, data) {
+      state.cards = data;
+    },
+    setGoodsData(state, data) {
+      state.goods = data;
+    },
+    setSelectedProduct(state, product) {
+      state.product = product;
+    },
+    setLoading(state, loading) {
+      state.isLoading = loading;
+    },
+  },
+
   getters: {
     getCoffeeHero(state) {
       return { cards: state.cards };
@@ -118,6 +65,12 @@ const cardStore = {
       return (id) => {
         return state.goods.find((card) => card.id === +id);
       }
+    },
+    selectedProduct(state) {
+      return state.product;
+    },
+    isLoading(state) {
+      return state.isLoading;
     },
   }
 }

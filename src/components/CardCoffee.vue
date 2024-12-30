@@ -1,9 +1,9 @@
 <template>
   <div :class="classItem" @click="onEmmit(card.id)">
-    <img :src="`img/${card.image}`" :alt="card.image" />
+    <img :src="card.image" :alt="card.image" />
     <div class="best__item-title">{{ card.title }}</div>
     <div class="shop__item-country">{{ card.country }}</div>
-    <div class="best__item-price">{{ card.price }}$</div>
+    <div class="best__item-price">{{ card.price }}</div>
   </div>
 </template>
 
