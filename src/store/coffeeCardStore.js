@@ -1,9 +1,9 @@
-import coffeeFactory from "@/CoffeeFactory.js";
-
 const cardStore = {
   state: {
     product: null,
     isLoading: false,
+    searchValue: '',
+    sortValue: '',
   },
 
   actions: {
@@ -26,6 +26,12 @@ const cardStore = {
     setLoading({ commit }, loading) {
       commit('setLoading', loading);
     },
+    SetSearchValue({ commit }, value) {
+      commit('SetSearchValue', value)
+    },
+    setSortValue({ commit }, value) {
+      commit('setSortValue', value)
+    }
   },
 
   mutations: {
@@ -44,6 +50,12 @@ const cardStore = {
     setLoading(state, loading) {
       state.isLoading = loading;
     },
+    SetSearchValue(state, value) {
+      state.searchValue = value;
+    },
+    setSortValue(state, value) {
+      state.sortValue = value;
+    },
   },
 
   getters: {
@@ -51,7 +63,13 @@ const cardStore = {
       return { cards: state.cards };
     },
     getCoffeeOur(state) {
-      return { coffee: state.coffee };
+      if (!state.searchValue) {
+        return { coffee: state.coffee };
+      }
+      const filteredCoffee = state.coffee.filter(item =>
+        item.title.toLowerCase().includes(state.searchValue)
+      );
+      return { coffee: filteredCoffee };
     },
     getCoffeePleasure(state) {
       return { goods: state.goods };
@@ -72,7 +90,13 @@ const cardStore = {
     isLoading(state) {
       return state.isLoading;
     },
+    getSearchValue(state) {
+      return state.searchValue;
+    }
   }
 }
 
 export default cardStore;
+
+
+// .filter(item => item.title.includes(state.searchValue))
